@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<title>demo</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<style>
+
+		#homepage {
+			background-image: url('js/images/background.jpg');
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+		}
+
+		.diary-date {
+			float: right;
+			font-family: cursive;
+			font-size: 32px;
+			margin-right: 40px;
+		}
+
+		.diary-content {
+			width: 80%;
+			margin: 0 auto;
+			margin-top: 80px;
+			font-family: cursive;
+			font-size: 20px;
+			font-weight: bold;
+			text-shadow: 0 0 40px 40px #fff;
+		}
+
+		div[data-role="footer"] {
+			width: 100%;
+			padding: 0;
+			border: none;
+			height: 36px;
+		}
+
+		div[data-role="footer"]>a {
+			height: 36px;
+			border: none;
+			text-align: center;
+			line-height: 36px;
+			margin-top: 0;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div data-role="page" id="homepage">
+		<div data-role="header" data-theme="b">
+			<h1>Dear Diary</h1>
+			<a data-icon="gear" data-iconpos="notext" class="ui-btn-right"></a>
+		</div>
+		<div data-role="content">
+			<p class="diary-date">sunny&nbsp;&nbsp;&nbsp;1st, 7, 2015</p>
+			<p class="diary-content">Dear Diary:<br><br>It's sunny today, our company hold a meeting this afternoon about the finance problem recently. Last month, the CFO Mr.Leonerd suggest me that the company should change the way we manage the stuff which had been existed for about two years. That way made our company lost nearly 2 million dollars which we should avoid. The meeting this afternoon was very...</p>
+		</div>
+		<div data-role="footer" data-position="fixed" data-id="appfoot" data-theme="b" class="ui-grid-b">
+			<a href="#newdiary" data-role="button" class="ui-block-a">New Diary</a>
+			<a href="#mydiary" data-role="button" class="ui-block-b">My Diary</a>
+			<a href="#cloud" data-role="button" class="ui-block-c">Cloud</a>
+		</div>
+	</div>
+
+	<div data-role="page" id="newdiary">
+		<div data-role="header" data-theme="b">
+			<a href="#homepage" data-icon="home" data-iconpos="notext"></a>
+			<h1>New Diary</h1>
+		</div>
+		<div data-role="content">
+			<p class="diary-date">sunny&nbsp;&nbsp;&nbsp;14th, 7, 2015</p>
+			<div class="diary-content">Dear Diary:<br><br>
+				<textarea autofocus="true">
+				</textarea>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" class="ui-grid-b" data-theme="b">
+			<a href="#font" data-role="button" class="ui-block-a">font</a>
+			<a href="#insert" data-role="button" class="ui-block-b">insert</a>
+			<a href="#save" data-role="button" class="ui-block-c">save</a>
+		</div>
+	</div>
+
+	<div data-role="page" id="mydiary">
+		<div data-role="header" data-theme="b">
+			<h1>My Diary</h1>
+			<a href="#homepage" data-icon="home" data-iconpos="notext"></a>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview">
+				<li><a href="#2015-7-1" data-icon="arrow-r" data-iconpos="right">1st,7,2015</a></li>
+				<li><a href="#2015-6-30" data-icon="arrow-r" data-iconpos="right">30th,6,2015</a></li>
+				<li><a href="#2015-6-29" data-icon="arrow-r" data-iconpos="right">29th,6,2015</a></li>
+				<li><a href="#2015-6-28" data-icon="arrow-r" data-iconpos="right">28th,6,2015</a></li>
+				<li><a href="#2015-6-27" data-icon="arrow-r" data-iconpos="right">26th,6,2015</a></li>
+				<li><a href="#2015-6-26" data-icon="arrow-r" data-iconpos="right">26th,6,2015</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-id="appfoot" data-theme="b" class="ui-grid-b">
+			<a href="#newdiary" data-role="button" class="ui-block-a">New Diary</a>
+			<a href="#mydiary" data-role="button" class="ui-block-b ui-btn-active">My Diary</a>
+			<a href="#cloud" data-role="button" class="ui-block-c">Cloud</a>
+		</div>
+	</div>
+
+	<div data-role="page" id="cloud">
+		<div data-role="header" data-theme="b">
+			<a href="#homepage" data-icon="home" data-iconpos="notext"></a>
+			<h1>Cloud Diary</h1>
+		</div>
+		<div data-role="content">
+			<form method="post" class="diary-content">
+				<label for="username">username:</label>
+				<input type="text" id="username">
+				<label for="password">password:</label>
+				<input type="password" id="password">
+				<input type="checkbox" id="agree">
+				<label for="agree">Agreed the <a href="#serviceitem">Service Item</a></label>
+				<input type="submit" value="Login">
+			</form>
+		</div>
+		<div data-role="footer" data-position="fixed" data-id="appfoot" data-theme="b" class="ui-grid-b">
+			<a href="#newdiary" data-role="button" class="ui-block-a">New Diary</a>
+			<a href="#mydiary" data-role="button" class="ui-block-b">My Diary</a>
+			<a href="#cloud" data-role="button" class="ui-block-c ui-btn-active">Cloud</a>
+		</div>
+	</div>
+
+		<script>
+
+		(function() {
+
+			var homepage=$('#homepage'),mydiary=$('#mydiary'),cloud=$('#cloud');
+
+			homepage.on('swipeleft',function() {
+  				$.mobile.changePage(mydiary);
+			});
+			mydiary.on('swiperight',function() {
+				$.mobile.changePage(homepage);
+			});
+			mydiary.on('swipeleft',function() {
+				$.mobile.changePage(cloud);
+			});
+			cloud.on('swiperight',function() {
+				$.mobile.changePage(mydiary);
+			});
+
+			
+			document.addEventListener("backbutton",onBackKeyDown,false);
+    		function onBackKeyDown(){  
+        		if($.mobile.activePage.is('#page-1')||$.mobile.activePage.is('#page-1-2')) {  
+            		navigator.app.exitApp();  
+        		}  
+        		else {  
+            		navigator.app.backHistory();  
+        		}  
+    		}
+
+		})();
+
+	</script>
+</body>
+</html>
